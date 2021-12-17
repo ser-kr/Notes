@@ -20,7 +20,7 @@ class NotesViewModel {
         try self.saveNotes()
     }
     
-    func addGood(note: Note) {
+    func addNote(note: Note) {
         self.notes.append(note)
     }
     

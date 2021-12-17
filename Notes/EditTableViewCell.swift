@@ -8,7 +8,10 @@
 import UIKit
 
 class EditTableViewCell: UITableViewCell {
-
+    @IBOutlet weak var editTitleTextField: UITextField!
+    @IBOutlet weak var editDetailTextField: UITextView!
+    @IBOutlet weak var editImageView: UIImageView!
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code

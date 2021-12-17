@@ -9,15 +9,21 @@ import UIKit
 
 class EditTableViewController: UITableViewController {
 
-    @IBOutlet weak var editTitleTextField: UITextField!
-    @IBOutlet weak var editDetailTextField: UITextView!
-    @IBOutlet weak var editImageView: UIImageView!
+//    @IBOutlet weak var editTitleTextField: UITextField!
+//    @IBOutlet weak var editDetailTextField: UITextView!
+//    @IBOutlet weak var editImageView: UIImageView!
 
-    var addNotesModel = AddNoteViewModel()
+    var addNoteModel = AddNoteViewModel()
     
     var onSave: ((_ note: Note)-> Void)?
     
     
+//    @IBAction func saveButton(_ sender: Any) {
+//        //self.view.endEditing(true)
+//        self.onSave?(addNoteModel.note)
+//        print("saveButton")
+//       // self.navigationController?.popViewController(animated: true)
+//    }
     
     
     @IBAction func editAttachImageButton(_ sender: Any) {
@@ -30,15 +36,15 @@ class EditTableViewController: UITableViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-       // editTitleTextField.text = addNotesModel.notes.headText
-       // editDetailTextField.text = addNotesModel.notes.detailText
+        //editTitleTextField.text = addNoteModel.note.headText
+       // editDetailTextField.text = addNoteModel.note.detailText
         
 
     }
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
         self.view.endEditing(true)
-        self.onSave?(addNotesModel.notes) //addItemViewModel.good)
+        self.onSave?(addNoteModel.note) //addItemViewModel.good)
         self.navigationController?.popViewController(animated: true)
        
            
@@ -69,7 +75,21 @@ extension EditTableViewController: UIImagePickerControllerDelegate, UINavigation
     }
 }
 
-    
+extension EditTableViewController: UITextViewDelegate {
+    func textViewDidEndEditing(_ textView: UITextView) {
+        addNoteModel.note.detailText = textView.text  //addItemViewModel.good.description = textView.text
+    }
+}
+
+extension EditTableViewController: UITextFieldDelegate {
+    func textFieldDidEndEditing(_ textField: UITextField) {
+        
+        
+            addNoteModel.note.headText = textField.text ?? "" // addItemViewModel.good.name = textField.text ?? ""
+       
+     
+}
+}
     
     
     

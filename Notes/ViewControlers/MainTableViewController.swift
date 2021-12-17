@@ -8,7 +8,9 @@
 import UIKit
 
 class MainTableViewController: UITableViewController {
+    
     var viewModel: NotesViewModel = NotesViewModel()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         do {
@@ -18,22 +20,34 @@ class MainTableViewController: UITableViewController {
         }
         print("viewDidLoad count \(viewModel.notes.count)")
     }
-    override func viewDidAppear(_ animated: Bool) {
-        super.viewDidAppear(animated)
-       // view.reloadInputViews()
-        print(viewModel.notes.count)
+//    override func viewDidAppear(_ animated: Bool) {
+//        super.viewDidAppear(animated)
+//       // view.reloadInputViews()
+//        print(viewModel.notes.count)
+//        do {
+//            //try viewModel.saveNotes()
+//            try viewModel.saveNotes()
+//            try viewModel.updateNotes()
+//
+//        } catch {
+//            print(error)
+//        }
+//        print("viewDidApear count \(viewModel.notes.count)")
+//    }
+
+    
+    
+    @IBAction func mainSaveButton(_ sender: Any) {
         do {
-            //try viewModel.saveNotes()
             try viewModel.saveNotes()
-            try viewModel.updateNotes()
-            
-        
         } catch {
             print(error)
         }
-        print("viewDidApear count \(viewModel.notes.count)")
+        
     }
-
+    
+    
+    
     override func numberOfSections(in tableView: UITableView) -> Int {
         return 1
     }
@@ -66,7 +80,31 @@ class MainTableViewController: UITableViewController {
     }
 
     
-    
+//    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+//        if let addItem = segue.destination as? EditTableViewController {
+//
+//            let addNoteViewModel = AddNoteViewModel()
+//
+//            if let selected = tableView.indexPathForSelectedRow {
+//                let toEdit = viewModel.notes[selected.row]
+//                addNoteViewModel.note = toEdit
+//
+//                addItem.onSave = { saved in
+//                    self.viewModel.notes[selected.row] = saved
+//                }
+//
+//            } else {
+//                addItem.onSave = { note in
+//                    self.viewModel.addNote(note: note)
+//                    self.tableView.reloadData()
+//                }
+//            }
+//
+//            addItem.addNoteModel = addNoteViewModel
+//
+//        }
+//    }
+
     
 
     /*

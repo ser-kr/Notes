@@ -49,9 +49,14 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" id="Olb-pl-mMd">
+                        <barButtonItem key="leftBarButtonItem" systemItem="save" id="qNu-SP-8bM">
+                            <connections>
+                                <action selector="mainSaveButton:" destination="Wr5-KI-TNG" id="VBT-F8-aOW"/>
+                            </connections>
+                        </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="8nB-eN-QkW">
                             <connections>
-                                <segue destination="jqO-KK-I1Q" kind="show" id="cXM-Jl-zzP"/>
+                                <segue destination="jqO-KK-I1Q" kind="show" identifier="AddItem" id="cXM-Jl-zzP"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -82,6 +87,9 @@
                                                     <rect key="frame" x="20" y="5" width="374" height="34.5"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                     <textInputTraits key="textInputTraits"/>
+                                                    <connections>
+                                                        <outlet property="delegate" destination="jqO-KK-I1Q" id="jga-If-bFz"/>
+                                                    </connections>
                                                 </textField>
                                             </subviews>
                                             <constraints>
@@ -109,6 +117,9 @@
                                                     <color key="textColor" systemColor="labelColor"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                     <textInputTraits key="textInputTraits" autocapitalizationType="sentences" returnKeyType="done"/>
+                                                    <connections>
+                                                        <outlet property="delegate" destination="jqO-KK-I1Q" id="o44-JX-5Y3"/>
+                                                    </connections>
                                                 </textView>
                                             </subviews>
                                             <constraints>
@@ -178,7 +189,13 @@
                             <outlet property="delegate" destination="jqO-KK-I1Q" id="mo8-fw-g0J"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" id="OiI-Q2-XkK"/>
+                    <navigationItem key="navigationItem" id="OiI-Q2-XkK">
+                        <barButtonItem key="rightBarButtonItem" systemItem="save" id="vOS-w4-mEa">
+                            <connections>
+                                <action selector="saveButton:" destination="jqO-KK-I1Q" id="9Up-2R-7m7"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <outlet property="editDetailTextField" destination="XIn-Jg-LvO" id="cj8-K8-0RJ"/>
                         <outlet property="editImageView" destination="R0h-WC-ycb" id="WS3-LB-K4k"/>

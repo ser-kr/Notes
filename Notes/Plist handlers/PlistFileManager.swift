@@ -33,11 +33,25 @@ class PlistFileManager {
     }
     
 }
+
+//В окремий файл
 public enum FileExistence: Equatable {
     case none
     case file
     case directory
 }
+
+public func == (lhs: FileExistence, rhs: FileExistence) -> Bool {
+    switch (lhs, rhs) {
+    case (.none, .none),
+         (.file, .file),
+         (.directory, .directory):
+        return true
+        
+    default: return false
+    }
+}
+
 public extension FileManager {
     func existence(atUrl url: URL) -> FileExistence {
         var isDirectory: ObjCBool = false

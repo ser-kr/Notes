@@ -25,9 +25,9 @@ struct Notes: Codable {
 
 class AddNoteViewModel {
     
-    var notes = Note.initial
+    var note = Note.initial
     
     func editNotesPic(url: URL?) {
-        self.notes.attachImage = url
+        self.note.attachImage = url
     }
 }
