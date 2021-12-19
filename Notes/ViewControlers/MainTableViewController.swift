@@ -44,6 +44,7 @@ class MainTableViewController: UITableViewController {
         let delete = deleteAction(at: indexPath)
         return UISwipeActionsConfiguration(actions: [delete, favorite])
     }
+    
     func favoriteAction(at indexPath: IndexPath) -> UIContextualAction {
         let action = UIContextualAction(style: .normal, title: "Favorite") { (action, view, completion) in
             self.viewModel.togleFavorite(index: indexPath.row)
@@ -64,7 +65,6 @@ class MainTableViewController: UITableViewController {
         return action
     }
     
-    
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if let addItem = segue.destination as? EditViewController {
             let addNoteViewModel = AddNoteViewModel()
@@ -73,6 +73,8 @@ class MainTableViewController: UITableViewController {
                 addNoteViewModel.note = toEdit
                 addItem.onSave = { saved in
                     self.viewModel.shownNotes[selected.row] = saved
+                    //try! self.viewModel.notesService.saveNotes()
+                    //self.tableView.reloadData()
                     //TODO: Save here
                 }
             } else {
@@ -88,8 +90,7 @@ class MainTableViewController: UITableViewController {
         if let editViewController = self.storyboard?.instantiateViewController(withIdentifier: "EditViewController") as? EditViewController  {
             editViewController.addNoteViewModel.note.headText = viewModel.shownNotes[indexPath.row].headText
             editViewController.addNoteViewModel.note.detailText = viewModel.shownNotes[indexPath.row].detailText
-           // editViewController.addNoteViewModel.note.attachImage
-            //TODO: Load pic
+            editViewController.addNoteViewModel.note.attachImage = viewModel.shownNotes[indexPath.row].attachImage
             print(viewModel.shownNotes[indexPath.row].headText)
             self.navigationController?.pushViewController(editViewController, animated: true)
         }
@@ -100,4 +101,5 @@ extension MainTableViewController: UISearchBarDelegate {
         self.viewModel.filter(text: searchText)
         self.tableView.reloadData()
     }
+    
 }

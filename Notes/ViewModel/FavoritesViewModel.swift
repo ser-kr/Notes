@@ -8,24 +8,23 @@
 import Foundation
 class FaviritesViewModel {
     
-    var notes: [Note] = []
+    var allNotes: Notes
+    var shownNotes: [Note] = []
+    
     let notesService = PlistNotesService.instance
-
-    func updateNotes() throws {
+    
+    init() {
+        self.allNotes = try! notesService.readNotes()
+        self.updateModel()
         
-        self.notes = try notesService.readNotes().notes
-        self.notes = self.notes.filter { $0.favorites }
     }
     
-    func togleFavorite(index: Int) {
-       // self.notes[index].favorites.toggle()
-      //  try! self.saveNotes()
+    func deleteFromFavorites(index: Int) {
+        self.shownNotes[index].favorites = false
+        self.shownNotes.remove(at: index)
+        try! self.notesService.saveNotes()
     }
-
-    func saveNotes() throws {
-       // let notes = Notes(notes: self.notes)
-      //  try notesService.saveNotes(notes: notes)
+    func updateModel() {
+        self.shownNotes = self.allNotes.notes.filter { $0.favorites }
     }
-    
-    
 }

@@ -41,11 +41,10 @@ class MainViewModel {
     
     func filter(text: String) {
         //try! updateNotes()
-//        if text.isEmpty {
-//            //TODO: Empty text
-//        } else {
+        if text.isEmpty {
+            self.shownNotes = self.allNotes.notes
+        } else {
             self.shownNotes = self.allNotes.notes.filter { $0.headText.contains(text) }
-            
-        //}
+        }
     }
 }

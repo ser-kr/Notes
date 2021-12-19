@@ -51,11 +51,6 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" id="Olb-pl-mMd">
-                        <barButtonItem key="leftBarButtonItem" systemItem="save" id="qNu-SP-8bM">
-                            <connections>
-                                <action selector="mainSaveButton:" destination="Wr5-KI-TNG" id="VBT-F8-aOW"/>
-                            </connections>
-                        </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="8nB-eN-QkW">
                             <connections>
                                 <segue destination="dpX-n3-3e1" kind="show" identifier="ToEditSegue" id="dsj-pN-soJ"/>
@@ -72,11 +67,11 @@
             <objects>
                 <viewController storyboardIdentifier="EditViewController" id="dpX-n3-3e1" customClass="EditViewController" customModule="Notes" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="0BX-k4-5lB">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="2Cd-0t-fLs">
-                                <rect key="frame" x="20" y="10" width="374" height="24"/>
+                                <rect key="frame" x="20" y="98" width="374" height="24"/>
                                 <color key="backgroundColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="24" id="1yE-Yl-2xk"/>
@@ -88,7 +83,7 @@
                                 </connections>
                             </textField>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor i" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="6VF-rS-Tb2">
-                                <rect key="frame" x="20" y="54" width="374" height="149"/>
+                                <rect key="frame" x="20" y="142" width="374" height="149"/>
                                 <color key="backgroundColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="149" id="riP-e4-H0e"/>
@@ -101,7 +96,7 @@
                                 </connections>
                             </textView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3OP-Ls-QrT">
-                                <rect key="frame" x="20" y="211" width="66.5" height="31"/>
+                                <rect key="frame" x="20" y="299" width="66.5" height="31"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="plain" title="Attach"/>
                                 <connections>
@@ -109,7 +104,7 @@
                                 </connections>
                             </button>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="g7a" translatesAutoresizingMaskIntoConstraints="NO" id="ecq-1O-qu7">
-                                <rect key="frame" x="20" y="263.5" width="374" height="196.5"/>
+                                <rect key="frame" x="20" y="351.5" width="374" height="196.5"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="196.5" id="ozy-ym-rNm"/>
                                 </constraints>
@@ -131,13 +126,7 @@
                             <constraint firstItem="ecq-1O-qu7" firstAttribute="leading" secondItem="3OP-Ls-QrT" secondAttribute="leading" id="t1N-P0-nam"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" id="ACV-lm-hDM">
-                        <barButtonItem key="rightBarButtonItem" systemItem="save" id="9Xn-aD-EkV">
-                            <connections>
-                                <action selector="saveButton:" destination="dpX-n3-3e1" id="hZV-8q-erD"/>
-                            </connections>
-                        </barButtonItem>
-                    </navigationItem>
+                    <navigationItem key="navigationItem" id="ACV-lm-hDM"/>
                     <connections>
                         <outlet property="editDetailTextField" destination="6VF-rS-Tb2" id="Akb-Cq-csA"/>
                         <outlet property="editImageView" destination="ecq-1O-qu7" id="Kub-03-GLN"/>
@@ -176,17 +165,21 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <label key="tableHeaderView" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Favorites" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="FnC-PB-tly">
+                            <rect key="frame" x="0.0" y="0.0" width="414" height="44"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                            <nil key="textColor"/>
+                            <nil key="highlightedColor"/>
+                        </label>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="FavoritesCell" id="HYe-Zh-6Il" customClass="FavoritesTableViewCell" customModule="Notes" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="44.5" width="414" height="43.5"/>
+                                <rect key="frame" x="0.0" y="88.5" width="414" height="43.5"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="HYe-Zh-6Il" id="Aag-af-l8X">
                                     <rect key="frame" x="0.0" y="0.0" width="414" height="43.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                 </tableViewCellContentView>
-                                <connections>
-                                    <segue destination="dpX-n3-3e1" kind="show" id="yZR-VT-UaK"/>
-                                </connections>
                             </tableViewCell>
                         </prototypes>
                         <connections>
@@ -220,9 +213,6 @@
             <point key="canvasLocation" x="2208.695652173913" y="28.794642857142854"/>
         </scene>
     </scenes>
-    <inferredMetricsTieBreakers>
-        <segue reference="yZR-VT-UaK"/>
-    </inferredMetricsTieBreakers>
     <resources>
         <image name="g7a" width="1108" height="974"/>
         <image name="note.text" catalog="system" width="128" height="106"/>
