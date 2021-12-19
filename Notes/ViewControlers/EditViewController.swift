@@ -20,6 +20,8 @@ class EditViewController: UIViewController {
         
         editTitleTextField.text =  addNoteViewModel.note.headText
         editDetailTextField.text = addNoteViewModel.note.detailText
+        editImageView.image = UIImage(contentsOfFile: "addNoteViewModel.note.attachImage")  //addNoteViewModel.note.attachImage
+        //editImageView.image = addNoteViewModel.editNotesPic(url: URL)
         
     }
     
@@ -31,6 +33,7 @@ class EditViewController: UIViewController {
     }
     
     @IBAction func editAttachImageButton(_ sender: Any) {
+        print("Press Attach")
         let picker = UIImagePickerController()
         picker.sourceType = .photoLibrary
         picker.delegate = self
@@ -48,8 +51,11 @@ extension EditViewController: UIImagePickerControllerDelegate, UINavigationContr
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
         let imageURL = info[.imageURL] as? URL
         self.addNoteViewModel.editNotesPic(url: imageURL)   // self.addItemViewModel.editUserPic(url: imageURL)
+        //self.editImageView.image =
+        self.editImageView.image = UIImage(contentsOfFile: imageURL?.relativePath ?? "");//addNoteViewModel.note.attachImage
         // self.editImageView   //.setImage(UIImage(contentsOfFile: imageURL?.relativePath ?? ""), for: .normal)
         // self.selectImageButton.setImage(UIImage(contentsOfFile: imageURL?.relativePath ?? ""), for: .normal)
+        
         picker.dismiss(animated: true, completion: nil)
     }
     

@@ -6,7 +6,7 @@
 //
 
 import Foundation
-class NotesViewModel {
+class MainViewModel {
  
     var notes: [Note] = []
     let notesService = PlistNotesService()
@@ -20,7 +20,6 @@ class NotesViewModel {
         try self.saveNotes()
     }
 
-    
     func addNote(note: Note) {
         self.notes.append(note)
     }
@@ -30,9 +29,12 @@ class NotesViewModel {
         try notesService.saveNotes(notes: notes)  //saveNotes(notes: notes)
     }
     
-    func notesNames() -> [String] {
-        return self.notes.map { $0.headText }
-    }
+//    func notesCount() -> [Int] {
+//
+//
+//        //return self.notes.reduce
+//        //return self.notes.map { $0.headText }
+//    }
 
     
     func filter(text: String) {

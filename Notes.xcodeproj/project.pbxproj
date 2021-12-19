@@ -8,9 +8,9 @@
 
 /* Begin PBXBuildFile section */
 		535FA6C8277630390044123B /* FavoritesTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 535FA6C7277630390044123B /* FavoritesTableViewCell.swift */; };
+		535FA6CA2776613F0044123B /* FavoritesViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 535FA6C92776613F0044123B /* FavoritesViewModel.swift */; };
 		53CFB805275E53AD006C7138 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53CFB804275E53AD006C7138 /* AppDelegate.swift */; };
 		53CFB807275E53AD006C7138 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53CFB806275E53AD006C7138 /* SceneDelegate.swift */; };
-		53CFB809275E53AD006C7138 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53CFB808275E53AD006C7138 /* ViewController.swift */; };
 		53CFB80C275E53AD006C7138 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 53CFB80A275E53AD006C7138 /* Main.storyboard */; };
 		53CFB80E275E53B0006C7138 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 53CFB80D275E53B0006C7138 /* Assets.xcassets */; };
 		53CFB811275E53B0006C7138 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 53CFB80F275E53B0006C7138 /* LaunchScreen.storyboard */; };
@@ -19,7 +19,7 @@
 		53CFB821275E6DC9006C7138 /* NotesModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53CFB820275E6DC9006C7138 /* NotesModel.swift */; };
 		53CFB8D9276B32FA006C7138 /* PlistFileManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53CFB8D8276B32F9006C7138 /* PlistFileManager.swift */; };
 		53CFB8DB276B3329006C7138 /* PlistReader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53CFB8DA276B3329006C7138 /* PlistReader.swift */; };
-		53CFB8E5276B924E006C7138 /* NotesViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53CFB8E4276B924E006C7138 /* NotesViewModel.swift */; };
+		53CFB8E5276B924E006C7138 /* AddNotesViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53CFB8E4276B924E006C7138 /* AddNotesViewModel.swift */; };
 		53CFB8E7276B98A1006C7138 /* MainViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53CFB8E6276B98A1006C7138 /* MainViewModel.swift */; };
 		53CFB8E9276B9958006C7138 /* PlistService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53CFB8E8276B9958006C7138 /* PlistService.swift */; };
 		53CFB8EB276B9ECA006C7138 /* MainTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53CFB8EA276B9ECA006C7138 /* MainTableViewCell.swift */; };
@@ -28,10 +28,10 @@
 
 /* Begin PBXFileReference section */
 		535FA6C7277630390044123B /* FavoritesTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesTableViewCell.swift; sourceTree = "<group>"; };
+		535FA6C92776613F0044123B /* FavoritesViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesViewModel.swift; sourceTree = "<group>"; };
 		53CFB801275E53AD006C7138 /* Notes.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Notes.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		53CFB804275E53AD006C7138 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		53CFB806275E53AD006C7138 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		53CFB808275E53AD006C7138 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		53CFB80B275E53AD006C7138 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		53CFB80D275E53B0006C7138 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		53CFB810275E53B0006C7138 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -41,7 +41,7 @@
 		53CFB820275E6DC9006C7138 /* NotesModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotesModel.swift; sourceTree = "<group>"; };
 		53CFB8D8276B32F9006C7138 /* PlistFileManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlistFileManager.swift; sourceTree = "<group>"; };
 		53CFB8DA276B3329006C7138 /* PlistReader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlistReader.swift; sourceTree = "<group>"; };
-		53CFB8E4276B924E006C7138 /* NotesViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotesViewModel.swift; sourceTree = "<group>"; };
+		53CFB8E4276B924E006C7138 /* AddNotesViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddNotesViewModel.swift; sourceTree = "<group>"; };
 		53CFB8E6276B98A1006C7138 /* MainViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewModel.swift; sourceTree = "<group>"; };
 		53CFB8E8276B9958006C7138 /* PlistService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlistService.swift; sourceTree = "<group>"; };
 		53CFB8EA276B9ECA006C7138 /* MainTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTableViewCell.swift; sourceTree = "<group>"; };
@@ -59,6 +59,25 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		535FA6CB277661770044123B /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				53CFB8E6276B98A1006C7138 /* MainViewModel.swift */,
+				53CFB8E4276B924E006C7138 /* AddNotesViewModel.swift */,
+				535FA6C92776613F0044123B /* FavoritesViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		535FA6CC2776622A0044123B /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				53CFB8EA276B9ECA006C7138 /* MainTableViewCell.swift */,
+				535FA6C7277630390044123B /* FavoritesTableViewCell.swift */,
+			);
+			path = Cell;
+			sourceTree = "<group>";
+		};
 		53CFB7F8275E53AD006C7138 = {
 			isa = PBXGroup;
 			children = (
@@ -78,18 +97,17 @@
 		53CFB803275E53AD006C7138 /* Notes */ = {
 			isa = PBXGroup;
 			children = (
+				535FA6CB277661770044123B /* ViewModel */,
 				53CFB8DD276B33F2006C7138 /* Model */,
 				53CFB8DE276B3404006C7138 /* ViewControlers */,
 				53CFB8DC276B3393006C7138 /* Plist handlers */,
 				53CFB80A275E53AD006C7138 /* Main.storyboard */,
-				53CFB8F2276CCBAC006C7138 /* EditViewController.swift */,
 				53CFB80F275E53B0006C7138 /* LaunchScreen.storyboard */,
 				53CFB812275E53B0006C7138 /* Info.plist */,
 				53CFB80D275E53B0006C7138 /* Assets.xcassets */,
 				53CFB804275E53AD006C7138 /* AppDelegate.swift */,
 				53CFB806275E53AD006C7138 /* SceneDelegate.swift */,
 				53CFB8E3276B91B4006C7138 /* Extentions */,
-				53CFB808275E53AD006C7138 /* ViewController.swift */,
 			);
 			path = Notes;
 			sourceTree = "<group>";
@@ -108,8 +126,6 @@
 			isa = PBXGroup;
 			children = (
 				53CFB820275E6DC9006C7138 /* NotesModel.swift */,
-				53CFB8E4276B924E006C7138 /* NotesViewModel.swift */,
-				53CFB8E6276B98A1006C7138 /* MainViewModel.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -118,9 +134,9 @@
 			isa = PBXGroup;
 			children = (
 				53CFB818275E5509006C7138 /* MainTableViewController.swift */,
-				53CFB8EA276B9ECA006C7138 /* MainTableViewCell.swift */,
 				53CFB81C275E5544006C7138 /* FavoritesTableViewController.swift */,
-				535FA6C7277630390044123B /* FavoritesTableViewCell.swift */,
+				53CFB8F2276CCBAC006C7138 /* EditViewController.swift */,
+				535FA6CC2776622A0044123B /* Cell */,
 			);
 			path = ViewControlers;
 			sourceTree = "<group>";
@@ -203,13 +219,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				535FA6CA2776613F0044123B /* FavoritesViewModel.swift in Sources */,
 				53CFB8D9276B32FA006C7138 /* PlistFileManager.swift in Sources */,
 				53CFB819275E5509006C7138 /* MainTableViewController.swift in Sources */,
-				53CFB8E5276B924E006C7138 /* NotesViewModel.swift in Sources */,
+				53CFB8E5276B924E006C7138 /* AddNotesViewModel.swift in Sources */,
 				53CFB8DB276B3329006C7138 /* PlistReader.swift in Sources */,
 				53CFB821275E6DC9006C7138 /* NotesModel.swift in Sources */,
 				53CFB8F3276CCBAC006C7138 /* EditViewController.swift in Sources */,
-				53CFB809275E53AD006C7138 /* ViewController.swift in Sources */,
 				53CFB805275E53AD006C7138 /* AppDelegate.swift in Sources */,
 				53CFB8E9276B9958006C7138 /* PlistService.swift in Sources */,
 				53CFB81D275E5544006C7138 /* FavoritesTableViewController.swift in Sources */,

@@ -22,8 +22,8 @@ class PlistNotesService {
     
     func readNotes() throws -> Notes {
         let data = try plistManager.readData(name: fileName)
-        let goods = try PropertyListDecoder().decode(Notes.self, from: data)
-        return goods
+        let notes = try PropertyListDecoder().decode(Notes.self, from: data)
+        return notes
     }
     
     func saveNotes(notes: Notes) throws {

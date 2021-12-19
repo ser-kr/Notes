@@ -16,7 +16,7 @@ struct Note: Codable {
     
     static var initial = Note(headText: "", detailText: "", favorites: false)
 }
-
+//typealias Notes = [Note]
 struct Notes: Codable {
     var notes: [Note]
 }

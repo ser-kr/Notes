@@ -8,7 +8,8 @@
 import UIKit
 
 class MainTableViewController: UITableViewController {
-    var viewModel: NotesViewModel = NotesViewModel()
+    
+    var viewModel: MainViewModel = MainViewModel()
     
     
     override func viewDidLoad() {
@@ -51,7 +52,7 @@ class MainTableViewController: UITableViewController {
         let cell = tableView.dequeueReusableCell(withIdentifier: "MainCell", for: indexPath)
         
         if let notesCell = cell as? MainTableViewCell {
-            notesCell.note = viewModel.notes[indexPath.row] //viewModel.goods[indexPath.row]
+            notesCell.note = viewModel.notes[indexPath.row]
         }
         
         return cell
@@ -107,6 +108,7 @@ class MainTableViewController: UITableViewController {
         if let editViewController = self.storyboard?.instantiateViewController(withIdentifier: "EditViewController") as? EditViewController  {
             editViewController.addNoteViewModel.note.headText = viewModel.notes[indexPath.row].headText
             editViewController.addNoteViewModel.note.detailText = viewModel.notes[indexPath.row].detailText
+           // editViewController.addNoteViewModel.note.attachImage
             print(viewModel.notes[indexPath.row].headText)
             self.navigationController?.pushViewController(editViewController, animated: true)
         }
