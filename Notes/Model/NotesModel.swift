@@ -8,16 +8,22 @@
 import Foundation
 import UIKit
 
-struct Note: Codable {
+class Note: Codable {
     var headText: String
     var detailText: String
     var favorites: Bool
     var attachImage: URL?
-    
-    static var initial = Note(headText: "", detailText: "", favorites: false)
+    init() {
+        self.headText = ""
+        self.detailText = ""
+        self.favorites = false
+        self.attachImage = nil
+    }
+  
+    //static var initial = Note(headText: "", detailText: "", favorites: false)
 }
 //typealias Notes = [Note]
-struct Notes: Codable {
+class Notes: Codable {
     var notes: [Note]
 }
 

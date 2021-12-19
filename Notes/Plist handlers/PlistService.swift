@@ -6,30 +6,32 @@
 //
 
 import Foundation
+
+
 class PlistNotesService {
-    
+    static var instance = PlistNotesService()
     var plistManager: PlistFileManager
+    var notes: Notes? = nil
     let fileName = "Notes.plist"
-    init() {
+    private init() {
         do {
             plistManager =  try PlistFileManager(folderName: "NotesFolder")
         } catch {
-            print("ZZZ")
+            print(error)
             fatalError(error.localizedDescription)
-            
         }
     }
     
     func readNotes() throws -> Notes {
-        let data = try plistManager.readData(name: fileName)
-        let notes = try PropertyListDecoder().decode(Notes.self, from: data)
-        return notes
+        if notes == nil {
+            let data = try plistManager.readData(name: fileName)
+            self.notes = try PropertyListDecoder().decode(Notes.self, from: data)
+        }
+        return notes!
     }
     
-    func saveNotes(notes: Notes) throws {
-       let notesData = try PropertyListEncoder().encode(notes)
-       try plistManager.writeDataToFile(name: fileName, data: notesData)
+    func saveNotes() throws {
+        let notesData = try PropertyListEncoder().encode(self.notes)
+        try plistManager.writeDataToFile(name: fileName, data: notesData)
     }
-    
-    
 }

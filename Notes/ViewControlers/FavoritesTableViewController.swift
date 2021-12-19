@@ -13,23 +13,19 @@ class FavoritesTableViewController: UITableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        do {
-            try viewModel.updateNotes()
-        } catch {
-            print(error)
-        }
+       
         
     }
 
     override func viewDidAppear(_ animated: Bool) {
         view.reloadInputViews()
-        do {
-            try viewModel.updateNotes()
-        } catch {
-            print(error)
-        }
+//        do {
+//            try viewModel.updateNotes()
+//        } catch {
+//            print(error)
+//        }
         self.tableView.reloadData()
-        print("Favorites didappear \(viewModel.notes.count)")
+        print("Favorites didappear \(viewModel.shownNotes.count)")
     }
     
     override func numberOfSections(in tableView: UITableView) -> Int {
@@ -39,14 +35,14 @@ class FavoritesTableViewController: UITableViewController {
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         //let favoritesCount = viewModel.notes[indexPath.row]
-        return viewModel.notes.count
+        return viewModel.shownNotes.count
     }
 
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "FavoritesCell", for: indexPath)
-        if viewModel.notes[indexPath.row].favorites == true {
-        cell.textLabel?.text = viewModel.notes[indexPath.row].headText
+        if viewModel.shownNotes[indexPath.row].favorites == true {
+        cell.textLabel?.text = viewModel.shownNotes[indexPath.row].headText
             //favoriteCell.tLabel.text = "asdasdasd"
             //favoriteCell.note = viewModel.notes[indexPath.row]
            // notesCell.note = viewModel.notes[indexPath.row] //viewModel.goods[indexPath.row]
@@ -62,7 +58,7 @@ class FavoritesTableViewController: UITableViewController {
     }
     func unlikeAction(at indexPath: IndexPath) -> UIContextualAction {
         let action = UIContextualAction(style: .destructive, title: "Delete") { (action, view, completion) in
-            self.viewModel.notes[indexPath.row].favorites.toggle()
+            self.viewModel.togleFavorite(index: indexPath.row)
            // self.tableView.deleteRows(at: [indexPath], with: .fade)
            // self.tableView.reloadData()
             
@@ -74,10 +70,10 @@ class FavoritesTableViewController: UITableViewController {
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         if let editViewController = self.storyboard?.instantiateViewController(withIdentifier: "EditViewController") as? EditViewController  {
-            editViewController.addNoteViewModel.note.headText = viewModel.notes[indexPath.row].headText
-            editViewController.addNoteViewModel.note.detailText = viewModel.notes[indexPath.row].detailText
+            editViewController.addNoteViewModel.note.headText = viewModel.shownNotes[indexPath.row].headText
+            editViewController.addNoteViewModel.note.detailText = viewModel.shownNotes[indexPath.row].detailText
            // editViewController.addNoteViewModel.note.attachImage
-            print(viewModel.notes[indexPath.row].headText)
+            print(viewModel.shownNotes[indexPath.row].headText)
             self.navigationController?.pushViewController(editViewController, animated: true)
         }
     }

@@ -7,38 +7,45 @@
 
 import Foundation
 class MainViewModel {
- 
-    var notes: [Note] = []
-    let notesService = PlistNotesService()
+    var allNotes: Notes
+    var shownNotes: [Note] = []
     
-    func updateNotes() throws {
-        self.notes = try notesService.readNotes().notes
+    let notesService = PlistNotesService.instance
+    
+    init() {
+        self.allNotes = try! notesService.readNotes()
+        self.shownNotes = allNotes.notes
     }
     
     func deleteNote(index: Int) throws {
-        self.notes.remove(at: index)
+        let note = shownNotes[index]
+        self.shownNotes.remove(at: index)
+        self.allNotes.notes.removeAll(where: {$0 === note} )
         try self.saveNotes()
     }
-
+    func togleFavorite(index: Int) {
+        self.shownNotes[index].favorites.toggle()
+        try! self.saveNotes()
+    }
+    
     func addNote(note: Note) {
-        self.notes.append(note)
+        self.allNotes.notes.append(note)
+        self.shownNotes.append(note)
+        try! self.saveNotes()
     }
     
+    //TODO: Delete
     func saveNotes() throws {
-        let notes = Notes(notes: self.notes)
-        try notesService.saveNotes(notes: notes)  //saveNotes(notes: notes)
+        try! self.notesService.saveNotes()
     }
-    
-//    func notesCount() -> [Int] {
-//
-//
-//        //return self.notes.reduce
-//        //return self.notes.map { $0.headText }
-//    }
-
     
     func filter(text: String) {
-        self.notes = self.notes.filter { $0.headText.contains(text) || $0.detailText.contains(text) }
+        //try! updateNotes()
+//        if text.isEmpty {
+//            //TODO: Empty text
+//        } else {
+            self.shownNotes = self.allNotes.notes.filter { $0.headText.contains(text) }
+            
+        //}
     }
-    
 }

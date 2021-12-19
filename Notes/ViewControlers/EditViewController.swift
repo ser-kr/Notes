@@ -12,6 +12,7 @@ class EditViewController: UIViewController {
     @IBOutlet weak var editDetailTextField: UITextView!
     @IBOutlet weak var editImageView: UIImageView!
     var addNoteViewModel = AddNoteViewModel()
+    
     //var editNoteViewModel = Note(headText: "", detailText: "", favorites: true, attachImage: nil)
     var onSave: ((_ note: Note)-> Void)?
     
@@ -28,7 +29,7 @@ class EditViewController: UIViewController {
     override func viewDidDisappear(_ animated: Bool) {
         super.viewDidDisappear(animated)
         self.onSave?(addNoteViewModel.note)
-        
+       
         
     }
     
