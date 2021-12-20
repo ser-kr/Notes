@@ -8,7 +8,7 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Main Table View Controller-->
+        <!--Notes-->
         <scene sceneID="QZx-GU-s2k">
             <objects>
                 <tableViewController id="Wr5-KI-TNG" customClass="MainTableViewController" customModule="Notes" customModuleProvider="target" sceneMemberID="viewController">
@@ -50,7 +50,7 @@
                             <outlet property="delegate" destination="Wr5-KI-TNG" id="IZN-ow-pFH"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" id="Olb-pl-mMd">
+                    <navigationItem key="navigationItem" title="Notes" id="Olb-pl-mMd">
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="8nB-eN-QkW">
                             <connections>
                                 <action selector="addNoteButton:" destination="Wr5-KI-TNG" id="73V-jX-Brz"/>
@@ -149,15 +149,15 @@
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </tabBar>
                     <connections>
-                        <segue destination="XNA-8S-x1b" kind="relationship" relationship="viewControllers" id="Tll-s8-Ogc"/>
-                        <segue destination="Wou-dr-Llp" kind="relationship" relationship="viewControllers" id="kVO-Qx-8SV"/>
+                        <segue destination="Wou-dr-Llp" kind="relationship" relationship="viewControllers" id="x33-v2-3jp"/>
+                        <segue destination="XNA-8S-x1b" kind="relationship" relationship="viewControllers" id="rJ2-P0-buB"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="rLA-Fb-bAs" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1371.0144927536232" y="28.794642857142854"/>
         </scene>
-        <!--Favorites Table View Controller-->
+        <!--Favorites-->
         <scene sceneID="c6K-0M-FDN">
             <objects>
                 <tableViewController id="jrc-Xi-Pvp" customClass="FavoritesTableViewController" customModule="Notes" customModuleProvider="target" sceneMemberID="viewController">
@@ -165,16 +165,9 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                        <label key="tableHeaderView" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Favorites" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="FnC-PB-tly">
-                            <rect key="frame" x="0.0" y="0.0" width="414" height="44"/>
-                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                            <nil key="textColor"/>
-                            <nil key="highlightedColor"/>
-                        </label>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="FavoritesCell" id="HYe-Zh-6Il" customClass="FavoritesTableViewCell" customModule="Notes" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="88.5" width="414" height="43.5"/>
+                                <rect key="frame" x="0.0" y="44.5" width="414" height="43.5"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="HYe-Zh-6Il" id="Aag-af-l8X">
                                     <rect key="frame" x="0.0" y="0.0" width="414" height="43.5"/>
@@ -187,7 +180,7 @@
                             <outlet property="delegate" destination="jrc-Xi-Pvp" id="cEP-j0-HEW"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" id="NOP-8e-GJ1"/>
+                    <navigationItem key="navigationItem" title="Favorites" id="NOP-8e-GJ1"/>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="tif-a8-Eat" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>

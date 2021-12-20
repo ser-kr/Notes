@@ -43,7 +43,6 @@ class MainTableViewController: UITableViewController {
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "MainCell", for: indexPath)
-        
         if let notesCell = cell as? MainTableViewCell {
             notesCell.note = viewModel.shownNotes[indexPath.row]
         }
@@ -52,6 +51,7 @@ class MainTableViewController: UITableViewController {
  
     override func tableView(_ tableView: UITableView, trailingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
         let favorite = favoriteAction(at: indexPath)
+        favorite.backgroundColor = .green
         let delete = deleteAction(at: indexPath)
         return UISwipeActionsConfiguration(actions: [delete, favorite])
     }
@@ -76,11 +76,9 @@ class MainTableViewController: UITableViewController {
         return action
     }
     
-    
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         if let editViewController = self.storyboard?.instantiateViewController(withIdentifier: "EditViewController") as? EditViewController  {
             editViewController.editNoteViewModel.note = viewModel.shownNotes[indexPath.row]
-            //editViewController.editNoteViewModel.note =
             editViewController.onSave = {
                 try! self.viewModel.saveNotes()
                 self.tableView.reloadData()

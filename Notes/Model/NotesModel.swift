@@ -19,10 +19,8 @@ class Note: Codable {
         self.favorites = false
         self.attachImage = nil
     }
-  
-    //static var initial = Note(headText: "", detailText: "", favorites: false)
 }
-//typealias Notes = [Note]
+
 class Notes: Codable {
     var notes: [Note]
 }

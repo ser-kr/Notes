@@ -45,6 +45,7 @@ class FavoritesTableViewController: UITableViewController {
     
     func unlikeAction(at indexPath: IndexPath) -> UIContextualAction {
         let action = UIContextualAction(style: .destructive, title: "Delete") { (action, view, completion) in
+            //view.colo
             self.viewModel.deleteFromFavorites(index: indexPath.row)
             self.tableView.deleteRows(at: [indexPath], with: .fade)
             completion(true)
@@ -52,66 +53,16 @@ class FavoritesTableViewController: UITableViewController {
         return action
     }
     
-    
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         if let editViewController = self.storyboard?.instantiateViewController(withIdentifier: "EditViewController") as? EditViewController  {
             editViewController.editNoteViewModel.note = viewModel.shownNotes[indexPath.row]
             editViewController.onSave = {
-                            try! self.viewModel.saveNotes()
-                            self.tableView.reloadData()
-                        }
-                        self.navigationController?.pushViewController(editViewController, animated: true)
-                    } else {
-                        print("Error EditViewController")
-                    }
-        
-        
-        
-        
+                try! self.viewModel.saveNotes()
+                self.tableView.reloadData()
+            }
+            self.navigationController?.pushViewController(editViewController, animated: true)
+        } else {
+            print("Error EditViewController")
         }
-    
-//    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-//        if let editViewController = self.storyboard?.instantiateViewController(withIdentifier: "EditViewController") as? EditViewController  {
-//            editViewController.editNoteViewModel.note = viewModel.shownNotes[indexPath.row]
-//            //editViewController.editNoteViewModel.note =
-//            editViewController.onSave = {
-//                try! self.viewModel.saveNotes()
-//                self.tableView.reloadData()
-//            }
-//            self.navigationController?.pushViewController(editViewController, animated: true)
-//        } else {
-//            print("Error EditViewController")
-//        }
-//    }
-    
-//    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-//        if let editViewController = self.storyboard?.instantiateViewController(withIdentifier: "EditViewController") as? EditViewController  {
-//            editViewController.addNoteViewModel.note.headText = viewModel.shownNotes[indexPath.row].headText
-//            editViewController.addNoteViewModel.note.detailText = viewModel.shownNotes[indexPath.row].detailText
-//            // editViewController.addNoteViewModel.note.attachImage
-//            print(viewModel.shownNotes[indexPath.row].headText)
-//            self.navigationController?.pushViewController(editViewController, animated: true)
-//        }
-//    }
-    //    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-    //        if let addItem = segue.destination as? EditViewController {
-    //            let addNoteViewModel = AddNoteViewModel()
-    //
-    //            if let selected = tableView.indexPathForSelectedRow {
-    //                let toEdit = viewModel.notes[selected.row]
-    //                addNoteViewModel.note = toEdit
-    //
-    //                addItem.onSave = { saved in
-    //                    self.viewModel.notes[selected.row] = saved
-    //                }
-    //            } else {
-    //                addItem.onSave = { note in
-    //                    self.viewModel.addNote(note: note)
-    //                    self.tableView.reloadData()
-    //                }
-    //            }
-    //            addItem.addNoteViewModel = addNoteViewModel
-    //        }
-    //    }
-    
+    }
 }

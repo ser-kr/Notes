@@ -22,7 +22,7 @@ class EditViewController: UIViewController {
     override func viewDidAppear(_ animated: Bool) {
         editTitleTextField.text =  editNoteViewModel.note.headText
         editDetailTextField.text = editNoteViewModel.note.detailText
-        print(editNoteViewModel.note.attachImage)
+        //print(editNoteViewModel.note.attachImage)
         editImageView.image = UIImage(contentsOfFile: editNoteViewModel.note.attachImage?.relativePath ?? "")
         currentImageURL = editNoteViewModel.note.attachImage
     }
@@ -33,7 +33,6 @@ class EditViewController: UIViewController {
         editNoteViewModel.note.detailText = editDetailTextField.text
         editNoteViewModel.note.attachImage = currentImageURL
         self.onSave?()
-        //TODO: What is it?
         self.view.endEditing(true)
     }
     
@@ -55,20 +54,5 @@ extension EditViewController: UIImagePickerControllerDelegate, UINavigationContr
     func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
         picker.dismiss(animated: true, completion: nil)
     }
-    
-    
 }
 
-//extension EditViewController: UITextViewDelegate {
-//    func textViewDidEndEditing(_ textView: UITextView) {
-//
-//        editNoteViewModel.note.detailText = textView.text
-//    }
-//}
-//
-//extension EditViewController: UITextFieldDelegate {
-//    func textFieldDidEndEditing(_ textField: UITextField) {
-//        //onSave?(textField.text
-//        editNoteViewModel.note.headText = textField.text ?? ""
-//    }
-//}
