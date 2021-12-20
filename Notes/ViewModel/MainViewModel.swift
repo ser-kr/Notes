@@ -6,15 +6,20 @@
 //
 
 import Foundation
+import UIKit
 class MainViewModel {
     var allNotes: Notes
     var shownNotes: [Note] = []
+    
+    //TODO: Note init
+   // var note: Note = Note()
     
     let notesService = PlistNotesService.instance
     
     init() {
         self.allNotes = try! notesService.readNotes()
         self.shownNotes = allNotes.notes
+        
     }
     
     func deleteNote(index: Int) throws {
@@ -25,6 +30,19 @@ class MainViewModel {
     }
     func togleFavorite(index: Int) {
         self.shownNotes[index].favorites.toggle()
+        let note = shownNotes[index]
+    }
+    //TODO: Note edit
+    func editNote(index: Int, newValue: Note) {
+        let note = shownNotes[index]
+        switch index {
+            case 1:
+            note.headText = newValue.headText
+            case 2:
+            note.detailText = newValue.detailText
+            default:
+                break
+            }
         try! self.saveNotes()
     }
     

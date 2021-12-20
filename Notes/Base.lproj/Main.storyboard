@@ -72,7 +72,7 @@
                         <subviews>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="2Cd-0t-fLs">
                                 <rect key="frame" x="20" y="98" width="374" height="24"/>
-                                <color key="backgroundColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="24" id="1yE-Yl-2xk"/>
                                 </constraints>
@@ -82,9 +82,9 @@
                                     <outlet property="delegate" destination="dpX-n3-3e1" id="f4T-C5-UDo"/>
                                 </connections>
                             </textField>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor i" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="6VF-rS-Tb2">
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="6VF-rS-Tb2">
                                 <rect key="frame" x="20" y="142" width="374" height="149"/>
-                                <color key="backgroundColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="149" id="riP-e4-H0e"/>
                                 </constraints>
@@ -96,9 +96,9 @@
                                 </connections>
                             </textView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3OP-Ls-QrT">
-                                <rect key="frame" x="20" y="299" width="66.5" height="31"/>
+                                <rect key="frame" x="20" y="299" width="86.5" height="31"/>
                                 <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="plain" title="Attach"/>
+                                <buttonConfiguration key="configuration" style="plain" image="paperclip" catalog="system" title="Attach"/>
                                 <connections>
                                     <action selector="editAttachImageButton:" destination="dpX-n3-3e1" eventType="touchUpInside" id="UCE-Al-U8w"/>
                                 </connections>
@@ -111,7 +111,7 @@
                             </imageView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="sfH-Kq-CYW"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <color key="backgroundColor" systemColor="systemGray5Color"/>
                         <constraints>
                             <constraint firstItem="ecq-1O-qu7" firstAttribute="trailing" secondItem="6VF-rS-Tb2" secondAttribute="trailing" id="4DE-qg-5qv"/>
                             <constraint firstItem="2Cd-0t-fLs" firstAttribute="top" secondItem="sfH-Kq-CYW" secondAttribute="top" constant="10" id="5lC-zM-wqz"/>
@@ -216,11 +216,15 @@
     <resources>
         <image name="g7a" width="1108" height="974"/>
         <image name="note.text" catalog="system" width="128" height="106"/>
+        <image name="paperclip" catalog="system" width="121" height="128"/>
         <systemColor name="labelColor">
             <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemGray5Color">
+            <color red="0.89803921568627454" green="0.89803921568627454" blue="0.91764705882352937" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>

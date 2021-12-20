@@ -67,14 +67,20 @@ class MainTableViewController: UITableViewController {
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if let addItem = segue.destination as? EditViewController {
-            let addNoteViewModel = AddNoteViewModel()
+            
+            let addNoteViewModel = EditNoteViewModel()
+            
             if let selected = tableView.indexPathForSelectedRow {
                 let toEdit = viewModel.shownNotes[selected.row]
                 addNoteViewModel.note = toEdit
                 addItem.onSave = { saved in
-                    self.viewModel.shownNotes[selected.row] = saved
+                    //printContent(self.viewModel.editNote(index: selected.row, newValue: saved))
+                    self.viewModel.editNote(index: selected.row, newValue: saved)
+                   // self.viewModel.editUserItem(indexPath: selected, newValue: value)
+                     //self.viewModel.shownNotes[selected.row] = saved
+                    //self.viewModel.shownNotes[selected.row] = saved
                     //try! self.viewModel.notesService.saveNotes()
-                    //self.tableView.reloadData()
+                    self.tableView.reloadData()
                     //TODO: Save here
                 }
             } else {

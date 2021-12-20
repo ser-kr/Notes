@@ -11,7 +11,7 @@ class EditViewController: UIViewController {
     @IBOutlet weak var editTitleTextField: UITextField!
     @IBOutlet weak var editDetailTextField: UITextView!
     @IBOutlet weak var editImageView: UIImageView!
-    var addNoteViewModel = AddNoteViewModel()
+    var addNoteViewModel = EditNoteViewModel()
     
     var onSave: ((_ note: Note)-> Void)?
     
@@ -25,6 +25,7 @@ class EditViewController: UIViewController {
     override func viewDidDisappear(_ animated: Bool) {
         super.viewDidDisappear(animated)
         self.onSave?(addNoteViewModel.note)
+        self.view.endEditing(true)
     }
     
     @IBAction func editAttachImageButton(_ sender: Any) {
@@ -53,12 +54,22 @@ extension EditViewController: UIImagePickerControllerDelegate, UINavigationContr
 
 extension EditViewController: UITextViewDelegate {
     func textViewDidEndEditing(_ textView: UITextView) {
+        
         addNoteViewModel.note.detailText = textView.text
     }
 }
 
+//extension EditViewController: UITextFieldDelegate {
+//    func textFieldDidEndEditing(_ textField: UITextField) {
+//        //onSave?(textField.text
+//        addNoteViewModel.note.headText = textField.text ?? ""
+//    }
+//}
 extension EditViewController: UITextFieldDelegate {
-    func textFieldDidEndEditing(_ textField: UITextField) {
+    
+    func textFieldDidEndEditing(_ textField: UITextField, reason: UITextField.DidEndEditingReason) {
+        //onSave?(addNoteViewModel.note)
         addNoteViewModel.note.headText = textField.text ?? ""
     }
+    
 }

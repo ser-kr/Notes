@@ -6,7 +6,7 @@
 //
 
 import Foundation
-class AddNoteViewModel {
+class EditNoteViewModel {
     
     var note = Note()
     
