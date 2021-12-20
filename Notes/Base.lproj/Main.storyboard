@@ -103,7 +103,7 @@
                                     <action selector="editAttachImageButton:" destination="dpX-n3-3e1" eventType="touchUpInside" id="UCE-Al-U8w"/>
                                 </connections>
                             </button>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="g7a" translatesAutoresizingMaskIntoConstraints="NO" id="ecq-1O-qu7">
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="ecq-1O-qu7">
                                 <rect key="frame" x="20" y="307.5" width="374" height="196.5"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="196.5" id="ozy-ym-rNm"/>
@@ -149,7 +149,7 @@
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </tabBar>
                     <connections>
-                        <segue destination="jrc-Xi-Pvp" kind="relationship" relationship="viewControllers" id="Tll-s8-Ogc"/>
+                        <segue destination="XNA-8S-x1b" kind="relationship" relationship="viewControllers" id="Tll-s8-Ogc"/>
                         <segue destination="Wou-dr-Llp" kind="relationship" relationship="viewControllers" id="kVO-Qx-8SV"/>
                     </connections>
                 </tabBarController>
@@ -187,11 +187,11 @@
                             <outlet property="delegate" destination="jrc-Xi-Pvp" id="cEP-j0-HEW"/>
                         </connections>
                     </tableView>
-                    <tabBarItem key="tabBarItem" systemItem="favorites" id="lOh-g9-ZAv"/>
+                    <navigationItem key="navigationItem" id="NOP-8e-GJ1"/>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="tif-a8-Eat" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1366.6666666666667" y="766.74107142857144"/>
+            <point key="canvasLocation" x="2276.8115942028985" y="766.74107142857144"/>
         </scene>
         <!--Notes-->
         <scene sceneID="gSa-xT-LeQ">
@@ -212,9 +212,27 @@
             </objects>
             <point key="canvasLocation" x="2208.695652173913" y="28.794642857142854"/>
         </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="Sc2-ze-rgS">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="XNA-8S-x1b" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" systemItem="favorites" id="lOh-g9-ZAv"/>
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="RZq-mv-e5n">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="jrc-Xi-Pvp" kind="relationship" relationship="rootViewController" id="e5Q-nc-Aij"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Jl3-fb-kd8" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1366.6666666666667" y="766.74107142857144"/>
+        </scene>
     </scenes>
     <resources>
-        <image name="g7a" width="1108" height="974"/>
         <image name="note.text" catalog="system" width="128" height="106"/>
         <image name="paperclip" catalog="system" width="121" height="128"/>
         <systemColor name="labelColor">

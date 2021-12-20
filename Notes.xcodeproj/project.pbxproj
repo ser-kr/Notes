@@ -69,13 +69,13 @@
 			path = ViewModel;
 			sourceTree = "<group>";
 		};
-		535FA6CC2776622A0044123B /* Cell */ = {
+		535FA6CC2776622A0044123B /* Cells */ = {
 			isa = PBXGroup;
 			children = (
 				53CFB8EA276B9ECA006C7138 /* MainTableViewCell.swift */,
 				535FA6C7277630390044123B /* FavoritesTableViewCell.swift */,
 			);
-			path = Cell;
+			path = Cells;
 			sourceTree = "<group>";
 		};
 		53CFB7F8275E53AD006C7138 = {
@@ -97,29 +97,28 @@
 		53CFB803275E53AD006C7138 /* Notes */ = {
 			isa = PBXGroup;
 			children = (
-				535FA6CB277661770044123B /* ViewModel */,
 				53CFB8DD276B33F2006C7138 /* Model */,
+				535FA6CB277661770044123B /* ViewModel */,
 				53CFB8DE276B3404006C7138 /* ViewControlers */,
-				53CFB8DC276B3393006C7138 /* Plist handlers */,
+				53CFB8DC276B3393006C7138 /* Services */,
 				53CFB80A275E53AD006C7138 /* Main.storyboard */,
 				53CFB80F275E53B0006C7138 /* LaunchScreen.storyboard */,
 				53CFB812275E53B0006C7138 /* Info.plist */,
 				53CFB80D275E53B0006C7138 /* Assets.xcassets */,
 				53CFB804275E53AD006C7138 /* AppDelegate.swift */,
 				53CFB806275E53AD006C7138 /* SceneDelegate.swift */,
-				53CFB8E3276B91B4006C7138 /* Extentions */,
 			);
 			path = Notes;
 			sourceTree = "<group>";
 		};
-		53CFB8DC276B3393006C7138 /* Plist handlers */ = {
+		53CFB8DC276B3393006C7138 /* Services */ = {
 			isa = PBXGroup;
 			children = (
 				53CFB8DA276B3329006C7138 /* PlistReader.swift */,
 				53CFB8E8276B9958006C7138 /* PlistService.swift */,
 				53CFB8D8276B32F9006C7138 /* PlistFileManager.swift */,
 			);
-			path = "Plist handlers";
+			path = Services;
 			sourceTree = "<group>";
 		};
 		53CFB8DD276B33F2006C7138 /* Model */ = {
@@ -136,16 +135,9 @@
 				53CFB818275E5509006C7138 /* MainTableViewController.swift */,
 				53CFB81C275E5544006C7138 /* FavoritesTableViewController.swift */,
 				53CFB8F2276CCBAC006C7138 /* EditViewController.swift */,
-				535FA6CC2776622A0044123B /* Cell */,
+				535FA6CC2776622A0044123B /* Cells */,
 			);
 			path = ViewControlers;
-			sourceTree = "<group>";
-		};
-		53CFB8E3276B91B4006C7138 /* Extentions */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Extentions;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */

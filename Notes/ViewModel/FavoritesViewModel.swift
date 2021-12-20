@@ -16,7 +16,6 @@ class FaviritesViewModel {
     init() {
         self.allNotes = try! notesService.readNotes()
         self.updateModel()
-        
     }
     
     func deleteFromFavorites(index: Int) {
@@ -26,5 +25,8 @@ class FaviritesViewModel {
     }
     func updateModel() {
         self.shownNotes = self.allNotes.notes.filter { $0.favorites }
+    }
+    func saveNotes() throws {
+        try! self.notesService.saveNotes()
     }
 }

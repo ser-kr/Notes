@@ -30,6 +30,7 @@ class MainViewModel {
     func togleFavorite(index: Int) {
         self.shownNotes[index].favorites.toggle()
         let note = shownNotes[index]
+        try! self.saveNotes()
     }
    
     func addNote(note: Note) {

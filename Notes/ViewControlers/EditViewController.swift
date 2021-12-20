@@ -18,11 +18,11 @@ class EditViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
     }
     override func viewDidAppear(_ animated: Bool) {
         editTitleTextField.text =  editNoteViewModel.note.headText
         editDetailTextField.text = editNoteViewModel.note.detailText
+        print(editNoteViewModel.note.attachImage)
         editImageView.image = UIImage(contentsOfFile: editNoteViewModel.note.attachImage?.relativePath ?? "")
         currentImageURL = editNoteViewModel.note.attachImage
     }
@@ -43,6 +43,7 @@ class EditViewController: UIViewController {
         picker.delegate = self
         self.present(picker, animated: true, completion: nil)
     }
+    
 }
 extension EditViewController: UIImagePickerControllerDelegate, UINavigationControllerDelegate {
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
@@ -54,6 +55,8 @@ extension EditViewController: UIImagePickerControllerDelegate, UINavigationContr
     func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
         picker.dismiss(animated: true, completion: nil)
     }
+    
+    
 }
 
 //extension EditViewController: UITextViewDelegate {

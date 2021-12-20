@@ -52,6 +52,38 @@ class FavoritesTableViewController: UITableViewController {
         return action
     }
     
+    
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        if let editViewController = self.storyboard?.instantiateViewController(withIdentifier: "EditViewController") as? EditViewController  {
+            editViewController.editNoteViewModel.note = viewModel.shownNotes[indexPath.row]
+            editViewController.onSave = {
+                            try! self.viewModel.saveNotes()
+                            self.tableView.reloadData()
+                        }
+                        self.navigationController?.pushViewController(editViewController, animated: true)
+                    } else {
+                        print("Error EditViewController")
+                    }
+        
+        
+        
+        
+        }
+    
+//    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+//        if let editViewController = self.storyboard?.instantiateViewController(withIdentifier: "EditViewController") as? EditViewController  {
+//            editViewController.editNoteViewModel.note = viewModel.shownNotes[indexPath.row]
+//            //editViewController.editNoteViewModel.note =
+//            editViewController.onSave = {
+//                try! self.viewModel.saveNotes()
+//                self.tableView.reloadData()
+//            }
+//            self.navigationController?.pushViewController(editViewController, animated: true)
+//        } else {
+//            print("Error EditViewController")
+//        }
+//    }
+    
 //    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
 //        if let editViewController = self.storyboard?.instantiateViewController(withIdentifier: "EditViewController") as? EditViewController  {
 //            editViewController.addNoteViewModel.note.headText = viewModel.shownNotes[indexPath.row].headText
