@@ -32,20 +32,7 @@ class MainViewModel {
         self.shownNotes[index].favorites.toggle()
         let note = shownNotes[index]
     }
-    //TODO: Note edit
-    func editNote(index: Int, newValue: Note) {
-        let note = shownNotes[index]
-        switch index {
-            case 1:
-            note.headText = newValue.headText
-            case 2:
-            note.detailText = newValue.detailText
-            default:
-                break
-            }
-        try! self.saveNotes()
-    }
-    
+   
     func addNote(note: Note) {
         self.allNotes.notes.append(note)
         self.shownNotes.append(note)

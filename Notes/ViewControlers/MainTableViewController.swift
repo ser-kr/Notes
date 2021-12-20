@@ -11,10 +11,21 @@ class MainTableViewController: UITableViewController {
     
     var viewModel: MainViewModel = MainViewModel()
     
+    @IBAction func addNoteButton(_ sender: Any) {
+        let newNote = Note()
+        viewModel.addNote(note: newNote)
+        if let editViewController = self.storyboard?.instantiateViewController(withIdentifier: "EditViewController") as? EditViewController {
+            editViewController.editNoteViewModel.note = newNote
+            editViewController.onSave = {
+                try! self.viewModel.saveNotes()
+                self.tableView.reloadData()
+            }
+            self.navigationController?.pushViewController(editViewController, animated: true)
+        }
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -65,40 +76,18 @@ class MainTableViewController: UITableViewController {
         return action
     }
     
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if let addItem = segue.destination as? EditViewController {
-            
-            let addNoteViewModel = EditNoteViewModel()
-            
-            if let selected = tableView.indexPathForSelectedRow {
-                let toEdit = viewModel.shownNotes[selected.row]
-                addNoteViewModel.note = toEdit
-                addItem.onSave = { saved in
-                    //printContent(self.viewModel.editNote(index: selected.row, newValue: saved))
-                    self.viewModel.editNote(index: selected.row, newValue: saved)
-                   // self.viewModel.editUserItem(indexPath: selected, newValue: value)
-                     //self.viewModel.shownNotes[selected.row] = saved
-                    //self.viewModel.shownNotes[selected.row] = saved
-                    //try! self.viewModel.notesService.saveNotes()
-                    self.tableView.reloadData()
-                    //TODO: Save here
-                }
-            } else {
-                addItem.onSave = { note in
-                    self.viewModel.addNote(note: note)
-                    self.tableView.reloadData()
-                }
-            }
-            addItem.addNoteViewModel = addNoteViewModel
-        }
-    }
+    
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         if let editViewController = self.storyboard?.instantiateViewController(withIdentifier: "EditViewController") as? EditViewController  {
-            editViewController.addNoteViewModel.note.headText = viewModel.shownNotes[indexPath.row].headText
-            editViewController.addNoteViewModel.note.detailText = viewModel.shownNotes[indexPath.row].detailText
-            editViewController.addNoteViewModel.note.attachImage = viewModel.shownNotes[indexPath.row].attachImage
-            print(viewModel.shownNotes[indexPath.row].headText)
+            editViewController.editNoteViewModel.note = viewModel.shownNotes[indexPath.row]
+            //editViewController.editNoteViewModel.note =
+            editViewController.onSave = {
+                try! self.viewModel.saveNotes()
+                self.tableView.reloadData()
+            }
             self.navigationController?.pushViewController(editViewController, animated: true)
+        } else {
+            print("Error EditViewController")
         }
     }
 }
@@ -109,3 +98,33 @@ extension MainTableViewController: UISearchBarDelegate {
     }
     
 }
+
+
+
+//override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+//        if let addItem = segue.destination as? EditViewController {
+//
+//            let addNoteViewModel = EditNoteViewModel()
+//
+//            if let selected = tableView.indexPathForSelectedRow {
+//                let toEdit = viewModel.shownNotes[selected.row]
+//                addNoteViewModel.note = toEdit
+//                addItem.onSave = { saved in
+//
+//                    self.viewModel.editNote(index: selected.row, newValue: saved)
+//                   // self.viewModel.editUserItem(indexPath: selected, newValue: value)
+//                     //self.viewModel.shownNotes[selected.row] = saved
+//                    //self.viewModel.shownNotes[selected.row] = saved
+//                    //try! self.viewModel.notesService.saveNotes()
+//                    self.tableView.reloadData()
+//                    //TODO: Save here
+//                }
+//            } else {
+//                addItem.onSave = { note in
+//                    self.viewModel.addNote(note: note)
+//                    self.tableView.reloadData()
+//                }
+//            }
+//            addItem.editNoteViewModel = addNoteViewModel
+//        }
+//    }

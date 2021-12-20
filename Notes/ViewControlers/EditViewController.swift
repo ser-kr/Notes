@@ -11,25 +11,33 @@ class EditViewController: UIViewController {
     @IBOutlet weak var editTitleTextField: UITextField!
     @IBOutlet weak var editDetailTextField: UITextView!
     @IBOutlet weak var editImageView: UIImageView!
-    var addNoteViewModel = EditNoteViewModel()
     
-    var onSave: ((_ note: Note)-> Void)?
+    var editNoteViewModel = EditNoteViewModel()
+    var currentImageURL: URL? = nil
+    var onSave: (()-> Void)?
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        editTitleTextField.text =  addNoteViewModel.note.headText
-        editDetailTextField.text = addNoteViewModel.note.detailText
-        editImageView.image = UIImage(contentsOfFile: addNoteViewModel.note.attachImage?.relativePath ?? "")
+        
+    }
+    override func viewDidAppear(_ animated: Bool) {
+        editTitleTextField.text =  editNoteViewModel.note.headText
+        editDetailTextField.text = editNoteViewModel.note.detailText
+        editImageView.image = UIImage(contentsOfFile: editNoteViewModel.note.attachImage?.relativePath ?? "")
+        currentImageURL = editNoteViewModel.note.attachImage
     }
     
     override func viewDidDisappear(_ animated: Bool) {
         super.viewDidDisappear(animated)
-        self.onSave?(addNoteViewModel.note)
+        editNoteViewModel.note.headText = editTitleTextField.text ?? ""
+        editNoteViewModel.note.detailText = editDetailTextField.text
+        editNoteViewModel.note.attachImage = currentImageURL
+        self.onSave?()
+        //TODO: What is it?
         self.view.endEditing(true)
     }
     
     @IBAction func editAttachImageButton(_ sender: Any) {
-        print("Press Attach")
         let picker = UIImagePickerController()
         picker.sourceType = .photoLibrary
         picker.delegate = self
@@ -38,12 +46,8 @@ class EditViewController: UIViewController {
 }
 extension EditViewController: UIImagePickerControllerDelegate, UINavigationControllerDelegate {
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
-        let imageURL = info[.imageURL] as? URL
-        self.addNoteViewModel.note.attachImage = imageURL
-        self.editImageView.image = UIImage(contentsOfFile: imageURL?.relativePath ?? "")
-        
-        // self.editImageView   //.setImage(UIImage(contentsOfFile: imageURL?.relativePath ?? ""), for: .normal)
-        // self.selectImageButton.setImage(UIImage(contentsOfFile: imageURL?.relativePath ?? ""), for: .normal)
+        currentImageURL = info[.imageURL] as? URL
+        self.editImageView.image = UIImage(contentsOfFile: currentImageURL?.relativePath ?? "")
         picker.dismiss(animated: true, completion: nil)
     }
     
@@ -52,24 +56,16 @@ extension EditViewController: UIImagePickerControllerDelegate, UINavigationContr
     }
 }
 
-extension EditViewController: UITextViewDelegate {
-    func textViewDidEndEditing(_ textView: UITextView) {
-        
-        addNoteViewModel.note.detailText = textView.text
-    }
-}
-
+//extension EditViewController: UITextViewDelegate {
+//    func textViewDidEndEditing(_ textView: UITextView) {
+//
+//        editNoteViewModel.note.detailText = textView.text
+//    }
+//}
+//
 //extension EditViewController: UITextFieldDelegate {
 //    func textFieldDidEndEditing(_ textField: UITextField) {
 //        //onSave?(textField.text
-//        addNoteViewModel.note.headText = textField.text ?? ""
+//        editNoteViewModel.note.headText = textField.text ?? ""
 //    }
 //}
-extension EditViewController: UITextFieldDelegate {
-    
-    func textFieldDidEndEditing(_ textField: UITextField, reason: UITextField.DidEndEditingReason) {
-        //onSave?(addNoteViewModel.note)
-        addNoteViewModel.note.headText = textField.text ?? ""
-    }
-    
-}

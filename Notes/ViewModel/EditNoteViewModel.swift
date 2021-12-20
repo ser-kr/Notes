@@ -8,7 +8,7 @@
 import Foundation
 class EditNoteViewModel {
     
-    var note = Note()
+    var note: Note! = nil
     
     func editNotesPic(url: URL?) {
         self.note.attachImage = url
