@@ -19,7 +19,6 @@ class MainViewModel {
     init() {
         self.allNotes = try! notesService.readNotes()
         self.shownNotes = allNotes.notes
-        
     }
     
     func deleteNote(index: Int) throws {
