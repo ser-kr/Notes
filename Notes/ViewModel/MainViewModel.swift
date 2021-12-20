@@ -11,9 +11,6 @@ class MainViewModel {
     var allNotes: Notes
     var shownNotes: [Note] = []
     
-    //TODO: Note init
-   // var note: Note = Note()
-    
     let notesService = PlistNotesService.instance
     
     init() {
@@ -29,7 +26,6 @@ class MainViewModel {
     }
     func togleFavorite(index: Int) {
         self.shownNotes[index].favorites = true//.toggle()
-        //let note = shownNotes[index]
         try! self.saveNotes()
     }
    
@@ -39,7 +35,6 @@ class MainViewModel {
         try! self.saveNotes()
     }
     
-    //TODO: Delete
     func saveNotes() throws {
         try! self.notesService.saveNotes()
     }
