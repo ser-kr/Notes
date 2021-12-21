@@ -31,10 +31,15 @@ class PlistFileManager {
         let fileURL = tempDir.appendingPathComponent(name)
         return try Data(contentsOf: fileURL)
     }
+    func fileExists(fileName: String) -> Bool{
+        let fileURL = tempDir.appendingPathComponent(fileName)
+        return self.fileManager.existence(atUrl: fileURL) == FileExistence.file
+    }
+    
     
 }
 
-//В окремий файл
+//TODO: In new file
 public enum FileExistence: Equatable {
     case none
     case file

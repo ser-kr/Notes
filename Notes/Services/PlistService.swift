@@ -23,9 +23,15 @@ class PlistNotesService {
     }
     
     func readNotes() throws -> Notes {
+        
         if notes == nil {
-            let data = try plistManager.readData(name: fileName)
-            self.notes = try PropertyListDecoder().decode(Notes.self, from: data)
+            if plistManager.fileExists(fileName: fileName) {
+                let data = try plistManager.readData(name: fileName)
+                self.notes = try PropertyListDecoder().decode(Notes.self, from: data)
+            } else {
+                self.notes = Notes()
+                try! saveNotes()
+            }
         }
         return notes!
     }

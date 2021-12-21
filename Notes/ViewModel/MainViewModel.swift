@@ -25,7 +25,7 @@ class MainViewModel {
         try self.saveNotes()
     }
     func togleFavorite(index: Int) {
-        self.shownNotes[index].favorites = true//.toggle()
+        self.shownNotes[index].favorites.toggle()
         try! self.saveNotes()
     }
    
@@ -40,7 +40,6 @@ class MainViewModel {
     }
     
     func filter(text: String) {
-        //try! updateNotes()
         if text.isEmpty {
             self.shownNotes = self.allNotes.notes
         } else {

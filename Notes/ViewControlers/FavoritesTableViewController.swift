@@ -22,7 +22,6 @@ class FavoritesTableViewController: UITableViewController {
     }
     
     override func numberOfSections(in tableView: UITableView) -> Int {
-        // #warning Incomplete implementation, return the number of sections
         return 1
     }
     
@@ -45,7 +44,6 @@ class FavoritesTableViewController: UITableViewController {
     
     func unlikeAction(at indexPath: IndexPath) -> UIContextualAction {
         let action = UIContextualAction(style: .destructive, title: "Delete") { (action, view, completion) in
-            //view.colo
             self.viewModel.deleteFromFavorites(index: indexPath.row)
             self.tableView.deleteRows(at: [indexPath], with: .fade)
             completion(true)

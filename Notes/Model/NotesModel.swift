@@ -23,6 +23,9 @@ class Note: Codable {
 
 class Notes: Codable {
     var notes: [Note]
+    init() {
+        self.notes = []
+    }
 }
 
 

@@ -14,25 +14,14 @@ class MainTableViewCell: UITableViewCell {
     
     override func layoutSubviews() {
         super.layoutSubviews()
-        notesMainLabel.text = note?.headText //good?.name
-        
-//        qtyLabel.text = "\(good?.quantity ?? 0)"
-//        descriptionLabel.text = good?.description
+        notesMainLabel.text = note?.headText
     }
-
-    
-    
-    
     
     override func awakeFromNib() {
         super.awakeFromNib()
-        // Initialization code
     }
-
+    
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
-
-        // Configure the view for the selected state
     }
-
 }
