@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		535FA6C8277630390044123B /* FavoritesTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 535FA6C7277630390044123B /* FavoritesTableViewCell.swift */; };
 		53CFB805275E53AD006C7138 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53CFB804275E53AD006C7138 /* AppDelegate.swift */; };
 		53CFB807275E53AD006C7138 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53CFB806275E53AD006C7138 /* SceneDelegate.swift */; };
 		53CFB809275E53AD006C7138 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53CFB808275E53AD006C7138 /* ViewController.swift */; };
@@ -15,18 +16,18 @@
 		53CFB811275E53B0006C7138 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 53CFB80F275E53B0006C7138 /* LaunchScreen.storyboard */; };
 		53CFB819275E5509006C7138 /* MainTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53CFB818275E5509006C7138 /* MainTableViewController.swift */; };
 		53CFB81D275E5544006C7138 /* FavoritesTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53CFB81C275E5544006C7138 /* FavoritesTableViewController.swift */; };
-		53CFB81F275E6D7E006C7138 /* EditTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53CFB81E275E6D7E006C7138 /* EditTableViewController.swift */; };
 		53CFB821275E6DC9006C7138 /* NotesModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53CFB820275E6DC9006C7138 /* NotesModel.swift */; };
 		53CFB8D9276B32FA006C7138 /* PlistFileManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53CFB8D8276B32F9006C7138 /* PlistFileManager.swift */; };
 		53CFB8DB276B3329006C7138 /* PlistReader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53CFB8DA276B3329006C7138 /* PlistReader.swift */; };
-		53CFB8E0276B3ECB006C7138 /* EditTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53CFB8DF276B3ECB006C7138 /* EditTableViewCell.swift */; };
-		53CFB8E5276B924E006C7138 /* ViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53CFB8E4276B924E006C7138 /* ViewModel.swift */; };
+		53CFB8E5276B924E006C7138 /* NotesViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53CFB8E4276B924E006C7138 /* NotesViewModel.swift */; };
 		53CFB8E7276B98A1006C7138 /* MainViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53CFB8E6276B98A1006C7138 /* MainViewModel.swift */; };
 		53CFB8E9276B9958006C7138 /* PlistService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53CFB8E8276B9958006C7138 /* PlistService.swift */; };
 		53CFB8EB276B9ECA006C7138 /* MainTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53CFB8EA276B9ECA006C7138 /* MainTableViewCell.swift */; };
+		53CFB8F3276CCBAC006C7138 /* EditViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53CFB8F2276CCBAC006C7138 /* EditViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		535FA6C7277630390044123B /* FavoritesTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesTableViewCell.swift; sourceTree = "<group>"; };
 		53CFB801275E53AD006C7138 /* Notes.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Notes.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		53CFB804275E53AD006C7138 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		53CFB806275E53AD006C7138 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -37,15 +38,14 @@
 		53CFB812275E53B0006C7138 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		53CFB818275E5509006C7138 /* MainTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTableViewController.swift; sourceTree = "<group>"; };
 		53CFB81C275E5544006C7138 /* FavoritesTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesTableViewController.swift; sourceTree = "<group>"; };
-		53CFB81E275E6D7E006C7138 /* EditTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditTableViewController.swift; sourceTree = "<group>"; };
 		53CFB820275E6DC9006C7138 /* NotesModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotesModel.swift; sourceTree = "<group>"; };
 		53CFB8D8276B32F9006C7138 /* PlistFileManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlistFileManager.swift; sourceTree = "<group>"; };
 		53CFB8DA276B3329006C7138 /* PlistReader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlistReader.swift; sourceTree = "<group>"; };
-		53CFB8DF276B3ECB006C7138 /* EditTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditTableViewCell.swift; sourceTree = "<group>"; };
-		53CFB8E4276B924E006C7138 /* ViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewModel.swift; sourceTree = "<group>"; };
+		53CFB8E4276B924E006C7138 /* NotesViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotesViewModel.swift; sourceTree = "<group>"; };
 		53CFB8E6276B98A1006C7138 /* MainViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewModel.swift; sourceTree = "<group>"; };
 		53CFB8E8276B9958006C7138 /* PlistService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlistService.swift; sourceTree = "<group>"; };
 		53CFB8EA276B9ECA006C7138 /* MainTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTableViewCell.swift; sourceTree = "<group>"; };
+		53CFB8F2276CCBAC006C7138 /* EditViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -82,14 +82,14 @@
 				53CFB8DE276B3404006C7138 /* ViewControlers */,
 				53CFB8DC276B3393006C7138 /* Plist handlers */,
 				53CFB80A275E53AD006C7138 /* Main.storyboard */,
-				53CFB8DF276B3ECB006C7138 /* EditTableViewCell.swift */,
+				53CFB8F2276CCBAC006C7138 /* EditViewController.swift */,
 				53CFB80F275E53B0006C7138 /* LaunchScreen.storyboard */,
 				53CFB812275E53B0006C7138 /* Info.plist */,
 				53CFB80D275E53B0006C7138 /* Assets.xcassets */,
 				53CFB804275E53AD006C7138 /* AppDelegate.swift */,
 				53CFB806275E53AD006C7138 /* SceneDelegate.swift */,
 				53CFB8E3276B91B4006C7138 /* Extentions */,
-				53CFB8E4276B924E006C7138 /* ViewModel.swift */,
+				53CFB808275E53AD006C7138 /* ViewController.swift */,
 			);
 			path = Notes;
 			sourceTree = "<group>";
@@ -108,6 +108,7 @@
 			isa = PBXGroup;
 			children = (
 				53CFB820275E6DC9006C7138 /* NotesModel.swift */,
+				53CFB8E4276B924E006C7138 /* NotesViewModel.swift */,
 				53CFB8E6276B98A1006C7138 /* MainViewModel.swift */,
 			);
 			path = Model;
@@ -116,11 +117,10 @@
 		53CFB8DE276B3404006C7138 /* ViewControlers */ = {
 			isa = PBXGroup;
 			children = (
-				53CFB808275E53AD006C7138 /* ViewController.swift */,
-				53CFB81E275E6D7E006C7138 /* EditTableViewController.swift */,
 				53CFB818275E5509006C7138 /* MainTableViewController.swift */,
 				53CFB8EA276B9ECA006C7138 /* MainTableViewCell.swift */,
 				53CFB81C275E5544006C7138 /* FavoritesTableViewController.swift */,
+				535FA6C7277630390044123B /* FavoritesTableViewCell.swift */,
 			);
 			path = ViewControlers;
 			sourceTree = "<group>";
@@ -205,18 +205,18 @@
 			files = (
 				53CFB8D9276B32FA006C7138 /* PlistFileManager.swift in Sources */,
 				53CFB819275E5509006C7138 /* MainTableViewController.swift in Sources */,
-				53CFB81F275E6D7E006C7138 /* EditTableViewController.swift in Sources */,
-				53CFB8E5276B924E006C7138 /* ViewModel.swift in Sources */,
+				53CFB8E5276B924E006C7138 /* NotesViewModel.swift in Sources */,
 				53CFB8DB276B3329006C7138 /* PlistReader.swift in Sources */,
 				53CFB821275E6DC9006C7138 /* NotesModel.swift in Sources */,
+				53CFB8F3276CCBAC006C7138 /* EditViewController.swift in Sources */,
 				53CFB809275E53AD006C7138 /* ViewController.swift in Sources */,
 				53CFB805275E53AD006C7138 /* AppDelegate.swift in Sources */,
 				53CFB8E9276B9958006C7138 /* PlistService.swift in Sources */,
 				53CFB81D275E5544006C7138 /* FavoritesTableViewController.swift in Sources */,
 				53CFB8EB276B9ECA006C7138 /* MainTableViewCell.swift in Sources */,
 				53CFB807275E53AD006C7138 /* SceneDelegate.swift in Sources */,
-				53CFB8E0276B3ECB006C7138 /* EditTableViewCell.swift in Sources */,
 				53CFB8E7276B98A1006C7138 /* MainViewModel.swift in Sources */,
+				535FA6C8277630390044123B /* FavoritesTableViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -15,6 +15,7 @@ class MainTableViewCell: UITableViewCell {
     override func layoutSubviews() {
         super.layoutSubviews()
         notesMainLabel.text = note?.headText //good?.name
+        
 //        qtyLabel.text = "\(good?.quantity ?? 0)"
 //        descriptionLabel.text = good?.description
     }
