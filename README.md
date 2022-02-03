@@ -8,7 +8,4 @@
 Пользователь может убрать заметку из избранного свайпнув влево и нажав Delete,
 но (!) заметка должна быть удалена только из избранного и остаться на экране Notes.
 
-https://ios-internship2021.slack.com/files/U02EBMY5H5Y/F02P3S9247P/simulator_screen_shot_-_iphone_11_pro_-_2021-12-01_at_18.18.35.png
-https://ios-internship2021.slack.com/files/U02EBMY5H5Y/F02PKDP4B33/simulator_screen_shot_-_iphone_11_pro_-_2021-12-01_at_18.07.01.png
-https://ios-internship2021.slack.com/files/U02EBMY5H5Y/F02NS5T9PJB/simulator_screen_shot_-_iphone_11_pro_-_2021-12-01_at_18.07.22.png
-https://ios-internship2021.slack.com/files/U02EBMY5H5Y/F02PKDPMMS5/simulator_screen_shot_-_iphone_11_pro_-_2021-12-01_at_18.14.02.png
+![1](https://drive.google.com/file/d/1toUIJLUjWhoTB16Zn1NEO7UJYytQlFQy/view?usp=sharing)
