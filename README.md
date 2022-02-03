@@ -8,4 +8,4 @@
 Пользователь может убрать заметку из избранного свайпнув влево и нажав Delete,
 но (!) заметка должна быть удалена только из избранного и остаться на экране Notes.
 
-![1](https://drive.google.com/file/d/1toUIJLUjWhoTB16Zn1NEO7UJYytQlFQy/view?usp=sharing)
+https://drive.google.com/drive/folders/1m33d3stqG-hCox4U_nvUqhnAFTutS21O?usp=sharing
